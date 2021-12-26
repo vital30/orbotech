@@ -1,0 +1,20 @@
+.bottomPanel{
+    border:1px solid;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.datalabels{
+    display: flex;
+    flex-direction: column;
+}
+
+div.severity-input {
+    display: flex;
+    flex-direction:column;
+}
+
+.selected-severity {
+    margin: 0 auto;
+}

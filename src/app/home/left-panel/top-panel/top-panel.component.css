@@ -1,0 +1,19 @@
+.topPanel{
+    width: 350px;
+    height: 300px;
+    position: relative;
+    border:1px solid;
+}
+
+.topPanel a{
+    width: 6px;
+    height: 6px;
+    background-color:red;
+    position: absolute;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.topPanel a.selectedDot{
+    background-color:BLUE;
+}

@@ -1,0 +1,70 @@
+#table-list{
+    padding: 0;
+    width: 100%;
+}
+
+#table-list label{
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+}
+
+#table-list li{
+    list-style-type: none;
+    border: 1px solid;
+    width: 100%;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+#table-list li a{
+    width: 32%;
+    height: 30px;
+    display: inline-block;
+    border-right: 1px solid;
+    border-left: 1px solid;
+}
+
+#table-list li:nth-child(odd) {
+    background: rgb(236, 236, 236);
+  }
+  
+#table-list li:nth-child(even) {
+background: rgb(194, 194, 194);
+}
+
+#table-list li:hover{
+    background: rgb(146, 146, 146);
+}
+
+#table-list li.selected{
+    background: blue;
+
+}
+
+#leftPanelData{
+    display: flex;
+    width: 45%;
+    height: 537px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#rigthContent{
+    display: flex;
+    width: 45%;
+    margin-top: 25px;
+    flex-direction: column;
+}
+
+#topPanelData{
+    display: flex;
+}
+
+#bottomPanelData{
+    display: flex;
+    width: 500px;
+    margin-top: 40px;
+}

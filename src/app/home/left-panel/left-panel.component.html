@@ -1,0 +1,24 @@
+<div id="leftPanelData" *ngIf="leftPanelData">
+    <ul id="table-list">
+        <label >Index</label>
+        <label >X</label>
+        <label >Y</label>
+      <li *ngFor="let tableListItem of leftPanelData; index as i"
+       (click)=markSelectedRow(tableListItem); [ngClass]="{'selected': selectedRow === tableListItem}">
+        <a >{{i}}</a>
+        <a >{{tableListItem.x}}</a>
+        <a >{{tableListItem.y}}</a>
+      
+      </li>
+    </ul>
+</div>
+
+<div id="rigthContent">
+    <div id="topPanelData" >
+        <app-top-panel (myEvent)="myEvent($event)" [topPanelData]="leftPanelData"></app-top-panel>
+    </div>
+
+    <div id="bottomPanelData" >
+        <app-bottom-panel (onChangeSeverety)="onChangeSeverety($event)" [selectedRow]="selectedRow"></app-bottom-panel>
+    </div>
+</div>

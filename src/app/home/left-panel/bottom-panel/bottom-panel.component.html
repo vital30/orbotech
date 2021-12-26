@@ -1,0 +1,12 @@
+<div class="bottomPanel" *ngIf="selectedRow">
+    <div class="datalabels">
+        <div><label>UUID:  </label><span>{{selectedRow.uuid}}</span></div>
+        <div><label>X:  </label><span>{{selectedRow.x}}</span></div>
+        <div><label>Y:  </label><span>{{selectedRow.y}}</span></div>
+    </div>
+    <div class="severity-input">
+       <div> <label>10</label> <input type="range" value="{{selectedRow.severity}}" 
+        min="10" max="100" #ranger (input)="rangeSlider(ranger.value)"><label>100</label></div>
+     <div class="selected-severity">{{selectedRow.severity}}</div>
+   </div>
+</div>
