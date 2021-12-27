@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-left-panel',
@@ -7,10 +7,12 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class LeftPanelComponent implements OnInit {
   @Input() leftPanelData: any[] = [];
+  @Input() selectedRow: any;
+  @Output() selectRowOnDotSelection = new EventEmitter();
+
   selected = false;;
-  selectedRow:any;
   selectedRowArr: any[] = [];
-  constructor() { }
+  constructor() {  }
 
   ngOnInit(): void {
     
@@ -18,7 +20,8 @@ export class LeftPanelComponent implements OnInit {
 
   markSelectedRow(selected:any){
     this.selectedRow = selected;
-    this.selectedRowArr.push(selected);
+    this.selectedRowArr=[selected];
+    this.selectRowOnDotSelection.emit(selected);
   }
 
   myEvent($event:any){

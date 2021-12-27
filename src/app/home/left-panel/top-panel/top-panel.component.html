@@ -1,6 +1,6 @@
 <div class="topPanel"  [ngStyle]="{'width':topPanelmWidth+'px', 'height':topPanelmHeigth+'px'}">
     <a *ngFor="let listItem of topPanelData; index as i"
-    (click)="findCurrentRow(listItem)" [ngClass]="{'selectedDot':listItem===selectedRow}"
+    (click)="findCurrentRow(listItem)" [ngClass]="{'selectedDot': topselectedRow === listItem}"
     [ngStyle]="{'top':listItem.x+'px', 'left':listItem.y+'px', 'opacity':'0.'+listItem.severity}">
     </a>
 </div>

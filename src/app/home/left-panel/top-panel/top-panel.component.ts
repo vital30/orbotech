@@ -8,6 +8,8 @@ import { DatabaseBarService} from '../../../_services/database-bar.service';
 })
 export class TopPanelComponent implements OnInit {
   @Input() topPanelData: any[] = [];
+  @Input() topselectedRow: any[] = [];
+  
   @Output() myEvent = new EventEmitter();
 
   topPanelm:any
@@ -15,8 +17,9 @@ export class TopPanelComponent implements OnInit {
   topPanelmWidth:any
   topPanelmHeigth:any
   selectedRow:any;
+  listItem:any
 
-  constructor(private dbService: DatabaseBarService) {}
+  constructor(private dbService: DatabaseBarService) {   }
 
   ngOnInit(): void {
     this.getTopPanel();
@@ -33,7 +36,8 @@ export class TopPanelComponent implements OnInit {
   }
 
   findCurrentRow(listItem:any){
-    this.selectedRow = listItem;
+    this.listItem = listItem;
+    this.selectedRow = this.listItem;
     this.myEvent.emit(listItem);
   }
 
